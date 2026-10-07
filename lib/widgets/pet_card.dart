@@ -28,7 +28,7 @@ class PetCard extends StatelessWidget {
             color: colorScheme.primaryContainer,
             child: Center(
               child: Icon(
-                Icons.catching_pokemon,
+                Icons.photo,
                 size: 80,
                 color: colorScheme.onPrimaryContainer,
               ),

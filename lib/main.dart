@@ -49,6 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: colorScheme.inversePrimary,
         centerTitle: true,
+        leading: IconButton(
+          onPressed: (){},
+          icon: Icon(Icons.person)
+        ),
         title: Text(widget.title),
       ),
       body: SingleChildScrollView(
@@ -66,19 +70,20 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0,
         buttonSize: Size(84, 84),
         overlayColor: colorScheme.primaryContainer,
-        overlayOpacity: 0.3,
-        shape: const CircleBorder(),
+        overlayOpacity: 0.0,
+        shape: CircleBorder(),
         backgroundColor: colorScheme.inversePrimary,
         tooltip: 'Menu',
         icon: Icons.pets,
         activeIcon: Icons.close,
         childrenButtonSize: Size(72, 72),
+        direction: SpeedDialDirection.left,
         children: [
           SpeedDialChild(
             label: 'Settings',
-            labelBackgroundColor: colorScheme.inversePrimary,
+            labelBackgroundColor: colorScheme.surface,
             elevation: 0,
-            shape: const CircleBorder(),
+            shape: CircleBorder(),
             backgroundColor: colorScheme.inversePrimary,
             child: IconButton(
               onPressed: (){},
@@ -87,20 +92,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SpeedDialChild(
             label: 'Pawdex',
-            labelBackgroundColor: colorScheme.inversePrimary,
+            labelBackgroundColor: colorScheme.surface,
             elevation: 0,
-            shape: const CircleBorder(),
+            shape: CircleBorder(),
             backgroundColor: colorScheme.inversePrimary,
             child: IconButton(
               onPressed: (){},
-              icon: Icon(Icons.book)
+              icon: Icon(Icons.book),
             )
           ),
           SpeedDialChild(
             label: 'Account',
-            labelBackgroundColor: colorScheme.inversePrimary,
+            labelBackgroundColor: colorScheme.surface,
             elevation: 0,
-            shape: const CircleBorder(),
+            shape: CircleBorder(),
             backgroundColor: colorScheme.inversePrimary,
             child: IconButton(
               onPressed: (){},
