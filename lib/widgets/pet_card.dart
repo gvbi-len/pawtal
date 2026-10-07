@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'detail_row.dart';
 
 class PetCard extends StatelessWidget {
-  const PetCard({required this.colorScheme});
+  PetCard({required this.colorScheme});
 
   final ColorScheme colorScheme;
+  String petName = "Unnamed";
+  String petBreed = "Unknown";
+  String petSpecies = "Unknown";
+  String petHealth = "Healthy";
+  int petAge = 0;
+  int petWeight = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +43,14 @@ class PetCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        'Dawg',
+                        petName,
                         style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Chip(
-                      label: const Text('Healthy'),
+                      label: Text(petHealth),
                       elevation: 0,
                       backgroundColor: colorScheme.secondaryContainer,
                       labelStyle: TextStyle(color: colorScheme.onSecondaryContainer),
@@ -52,10 +58,10 @@ class PetCard extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 8),
-                DetailRow(icon: Icons.category, label: 'Breed', value: 'Golden Retriever'),
-                DetailRow(icon: Icons.cake, label: 'Age', value: '3 years'),
-                DetailRow(icon: Icons.monitor_weight, label: 'Weight', value: '28 kg'),
-                DetailRow(icon: Icons.pets, label: 'Species', value: 'Dog'),
+                DetailRow(icon: Icons.category, label: 'Breed', value: petBreed),
+                DetailRow(icon: Icons.cake, label: 'Age', value: '$petAge years'),
+                DetailRow(icon: Icons.monitor_weight, label: 'Weight', value: '$petWeight kg'),
+                DetailRow(icon: Icons.pets, label: 'Species', value: petSpecies),
               ],
             ),
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'action_item.dart';
+import '../classes/action_item.dart';
 import 'action_button.dart';
 
 class ActionGrid extends StatelessWidget {

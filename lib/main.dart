@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:pawtal/widgets/action_grid.dart';
 import 'package:pawtal/widgets/pet_card.dart';
 
@@ -56,30 +57,59 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             PetCard(colorScheme: colorScheme),
-            const SizedBox(height: 24),
-            Text(
-              'Quick Actions',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 48),
             ActionGrid(colorScheme: colorScheme),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.large(
-        onPressed: () {},
+      floatingActionButton: SpeedDial(
         elevation: 0,
-        hoverElevation: 0,
-        focusElevation: 0,
-        highlightElevation: 0,
+        buttonSize: Size(84, 84),
+        overlayColor: colorScheme.primaryContainer,
+        overlayOpacity: 0.3,
         shape: const CircleBorder(),
         backgroundColor: colorScheme.inversePrimary,
         tooltip: 'Menu',
-        child: const Icon(Icons.pets),
+        icon: Icons.pets,
+        activeIcon: Icons.close,
+        childrenButtonSize: Size(72, 72),
+        children: [
+          SpeedDialChild(
+            label: 'Settings',
+            labelBackgroundColor: colorScheme.inversePrimary,
+            elevation: 0,
+            shape: const CircleBorder(),
+            backgroundColor: colorScheme.inversePrimary,
+            child: IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.settings)
+            )
+          ),
+          SpeedDialChild(
+            label: 'Pawdex',
+            labelBackgroundColor: colorScheme.inversePrimary,
+            elevation: 0,
+            shape: const CircleBorder(),
+            backgroundColor: colorScheme.inversePrimary,
+            child: IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.book)
+            )
+          ),
+          SpeedDialChild(
+            label: 'Account',
+            labelBackgroundColor: colorScheme.inversePrimary,
+            elevation: 0,
+            shape: const CircleBorder(),
+            backgroundColor: colorScheme.inversePrimary,
+            child: IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.person),
+            )
+          ),
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         notchMargin: 10.0,
