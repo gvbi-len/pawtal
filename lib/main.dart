@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:pawtal/pages/page_pawtal_index.dart';
 import 'package:pawtal/widgets/action_grid.dart';
 import 'package:pawtal/widgets/pet_card.dart';
 
@@ -83,7 +84,12 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Settings',
             labelBackgroundColor: colorScheme.surface,
             elevation: 0,
-            shape: CircleBorder(),
+            shape: CircleBorder(
+              side: BorderSide(
+                width: 8.0,
+                color: colorScheme.surface
+              )
+            ),
             backgroundColor: colorScheme.inversePrimary,
             child: IconButton(
               onPressed: (){},
@@ -94,10 +100,20 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Pawdex',
             labelBackgroundColor: colorScheme.surface,
             elevation: 0,
-            shape: CircleBorder(),
+            shape: CircleBorder(
+                side: BorderSide(
+                    width: 8.0,
+                    color: colorScheme.surface
+                )
+            ),
             backgroundColor: colorScheme.inversePrimary,
             child: IconButton(
-              onPressed: (){},
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const PagePawtalIndex()),
+                );
+              },
               icon: Icon(Icons.book),
             )
           ),
@@ -105,7 +121,12 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Account',
             labelBackgroundColor: colorScheme.surface,
             elevation: 0,
-            shape: CircleBorder(),
+            shape: CircleBorder(
+                side: BorderSide(
+                    width: 8.0,
+                    color: colorScheme.surface
+                )
+            ),
             backgroundColor: colorScheme.inversePrimary,
             child: IconButton(
               onPressed: (){},
