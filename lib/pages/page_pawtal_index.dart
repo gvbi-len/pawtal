@@ -19,7 +19,7 @@ class PagePawtalIndex extends StatelessWidget{
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        
+
       ),
     );
   }
