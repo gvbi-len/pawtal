@@ -10,10 +10,10 @@ class ActionGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final actions = [
-      ActionItem(icon: Icons.list_alt, label: 'Pet List'),
+      ActionItem(icon: Icons.collections_bookmark, label: 'Your Pets'),
       ActionItem(icon: Icons.medical_services, label: 'Medical Records'),
-      ActionItem(icon: Icons.directions_walk, label: 'Walk Records'),
-      ActionItem(icon: Icons.food_bank, label: 'Food Log')
+      ActionItem(icon: Icons.fitness_center, label: 'Exercises'),
+      ActionItem(icon: Icons.set_meal, label: 'Food Log')
     ];
 
     return GridView.count(

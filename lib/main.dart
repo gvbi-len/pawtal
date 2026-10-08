@@ -13,11 +13,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const Color accentColor = Colors.red;
     return MaterialApp(
       title: 'Pawtal',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: accentColor),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: accentColor, brightness: Brightness.dark)
       ),
       home: const MyHomePage(title: 'Pawtal'),
     );
@@ -68,70 +72,51 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: SpeedDial(
-        elevation: 0,
+        elevation: 3.0,
         buttonSize: Size(84, 84),
-        overlayColor: colorScheme.primaryContainer,
-        overlayOpacity: 0.0,
+        overlayColor: colorScheme.primary,
+        overlayOpacity: 0.3,
         shape: CircleBorder(),
-        backgroundColor: colorScheme.inversePrimary,
+        backgroundColor: colorScheme.surface,
+        activeBackgroundColor: colorScheme.inversePrimary,
         tooltip: 'Menu',
         icon: Icons.pets,
         activeIcon: Icons.close,
         childrenButtonSize: Size(72, 72),
-        direction: SpeedDialDirection.left,
         children: [
           SpeedDialChild(
             label: 'Settings',
             labelBackgroundColor: colorScheme.surface,
-            elevation: 0,
-            shape: CircleBorder(
-              side: BorderSide(
-                width: 8.0,
-                color: colorScheme.surface
-              )
-            ),
+            elevation: 3.0,
+            shape: CircleBorder(),
             backgroundColor: colorScheme.inversePrimary,
-            child: IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.settings)
-            )
+            onTap: (){},
+            child: const Icon(Icons.settings)
           ),
           SpeedDialChild(
             label: 'Pawdex',
             labelBackgroundColor: colorScheme.surface,
-            elevation: 0,
-            shape: CircleBorder(
-                side: BorderSide(
-                    width: 8.0,
-                    color: colorScheme.surface
-                )
-            ),
+            elevation: 3.0,
+            shape: CircleBorder(),
             backgroundColor: colorScheme.inversePrimary,
-            child: IconButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const PagePawtalIndex()),
-                );
-              },
-              icon: Icon(Icons.book),
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PagePawtalIndex()),
+              );
+            },
+            child: const Icon(
+              Icons.book,
             )
           ),
           SpeedDialChild(
-            label: 'Account',
+            label: 'Inventory',
             labelBackgroundColor: colorScheme.surface,
-            elevation: 0,
-            shape: CircleBorder(
-                side: BorderSide(
-                    width: 8.0,
-                    color: colorScheme.surface
-                )
-            ),
+            elevation: 3.0,
+            shape: CircleBorder(),
             backgroundColor: colorScheme.inversePrimary,
-            child: IconButton(
-              onPressed: (){},
-              icon: Icon(Icons.person),
-            )
+            onTap: (){},
+            child: const Icon(Icons.backpack),
           ),
         ],
       ),
