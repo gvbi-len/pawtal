@@ -10,7 +10,7 @@ class ActionGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final actions = [
-      ActionItem(icon: Icons.collections_bookmark, label: 'Your Pets'),
+      ActionItem(icon: Icons.pets, label: 'Your Pets'),
       ActionItem(icon: Icons.medical_services, label: 'Medical Records'),
       ActionItem(icon: Icons.fitness_center, label: 'Exercises'),
       ActionItem(icon: Icons.set_meal, label: 'Food Log')

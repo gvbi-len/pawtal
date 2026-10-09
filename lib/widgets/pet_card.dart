@@ -25,7 +25,7 @@ class PetCard extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      elevation: 0,
+      elevation: 3.0,
       color: Theme.of(context).colorScheme.inversePrimary,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -59,8 +59,8 @@ class PetCard extends StatelessWidget {
                     ),
                     Chip(
                       label: Text(petHealth),
-                      elevation: 0,
-                      backgroundColor: colorScheme.secondaryContainer,
+                      elevation: 3.0,
+                      backgroundColor: colorScheme.surface,
                       labelStyle: TextStyle(color: colorScheme.onSecondaryContainer),
                     ),
                   ],

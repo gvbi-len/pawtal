@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:pawtal/pages/page_pawtal_index.dart';
 import 'package:pawtal/widgets/action_grid.dart';
@@ -58,14 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              "Featured Pet:",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight(600)
-              ),
-            ),
             PetCard(colorScheme: colorScheme),
             const SizedBox(height: 48),
             ActionGrid(colorScheme: colorScheme),
@@ -81,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         },
         child: Icon(
+          color: colorScheme.primary,
           Icons.pets
         ),
       ),
@@ -93,17 +87,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
+              padding: EdgeInsets.all(16),
                 onPressed: (){
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const PagePawtalIndex()),
                   );
                 },
-                icon: Icon(Icons.book)
+                icon: Icon(Icons.collections_bookmark_sharp)
             ),
             IconButton(
-                onPressed: (){},
-                icon: Icon(Icons.settings)
+              padding: EdgeInsets.all(16),
+              onPressed: (){},
+              icon: Icon(Icons.settings)
             ),
           ],
         ),
