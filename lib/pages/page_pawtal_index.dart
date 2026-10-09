@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pawtal/widgets/pawdex_grid.dart';
 
 class PagePawtalIndex extends StatelessWidget{
   const PagePawtalIndex({super.key});
@@ -19,7 +20,8 @@ class PagePawtalIndex extends StatelessWidget{
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 120),
+        child: PawdexGrid(colorScheme: colorScheme),
       ),
     );
   }

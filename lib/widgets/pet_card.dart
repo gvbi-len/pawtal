@@ -12,6 +12,14 @@ class PetCard extends StatelessWidget {
   int petAge = 0;
   int petWeight = 0;
 
+  void setPetDetails(String newPetName, String newPetBreed, String newPetSpecies, int newPetAge, int newPetWeight){
+    this.petName = newPetName;
+    this.petBreed = newPetBreed;
+    this.petSpecies = newPetSpecies;
+    this.petAge = newPetAge;
+    this.petWeight = newPetWeight;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
